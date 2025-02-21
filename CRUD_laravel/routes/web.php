@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () {       //menampilkan halaman utama
+    return view('welcome');         //yakni 'welcome'
 });
+
+Route::resource('items', ItemController::class);        //membuat rute otomatis untuk CRUD berdasarkan 'ItemController'

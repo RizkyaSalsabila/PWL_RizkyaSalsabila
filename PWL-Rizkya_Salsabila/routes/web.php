@@ -31,3 +31,9 @@ Route::get('/world', function () {
 Route::get('/', function () {
     return 'Selamat Datang';
 });
+
+/*menggunakan rute 'GET' dengan url '/about', 
+kemudian mengembalikan teks NIM - Nama (2341720056 - Rizkya Salsabila) */
+Route::get('/about', function () {
+    return '2341720056 - Rizkya Salsabila';
+});

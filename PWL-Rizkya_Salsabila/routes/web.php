@@ -51,3 +51,10 @@ teks gabungan nilai nilai tersebut */
 Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
     return 'Pos ke- ' .$postId. " <br>Komentar ke- : " .$commentId;
 });
+
+/* menggunakan rute 'GET' dengan url memakai parameter dinamis {id},
+serta memiliki 1 parameter '$id' yang nantinya mengambil nilai dari {id} url
+untuk ditampilkan di halaman web browser */
+Route::get('/articles/{id}', function ($id) {
+    return 'Halaman Artikel dengan ID ' .$id;
+});

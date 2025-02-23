@@ -37,3 +37,10 @@ kemudian mengembalikan teks NIM - Nama (2341720056 - Rizkya Salsabila) */
 Route::get('/about', function () {
     return '2341720056 - Rizkya Salsabila';
 });
+
+/* menggunakan rute 'GET' dengan url yang memakai parameter dinamis {name},
+dan disimpan dalam variabel $name, kemudian mengembalikan teks 
+'gabungan string dg nilai parameter' */
+Route::get('/user/{name}', function ($name) {
+    return 'Nama saya '.$name;
+});

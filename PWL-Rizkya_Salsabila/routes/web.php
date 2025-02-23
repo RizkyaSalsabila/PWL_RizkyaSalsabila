@@ -21,3 +21,8 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     return 'Hello World';
 });
+
+//menggunakan rute 'GET' dengan url '/world', kemudian mengembalikan teks 'World'
+Route::get('/world', function () {
+    return 'World';
+});

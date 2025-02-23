@@ -26,3 +26,8 @@ Route::get('/hello', function () {
 Route::get('/world', function () {
     return 'World';
 });
+
+//menggunakan rute 'GET' dengan url '/', kemudian mengembalikan teks 'Selamat Datang'
+Route::get('/', function () {
+    return 'Selamat Datang';
+});

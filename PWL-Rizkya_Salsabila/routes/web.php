@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//menggunakan rute 'GET' dengan url '/hello', kemudian mengembalikan teks 'Hello World'
+Route::get('/hello', function () {
+    return 'Hello World';
+});

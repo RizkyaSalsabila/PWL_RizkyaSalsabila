@@ -44,3 +44,10 @@ dan disimpan dalam variabel $name, kemudian mengembalikan teks
 Route::get('/user/{name}', function ($name) {
     return 'Nama saya '.$name;
 });
+
+/* menggunakan rute 'GET' dengan url memakai parameter dinamis {post} dan {comment},
+serta memiliki 2 parameter '$postId' dan '$commentId', yang selanjutnya mengembalikan
+teks gabungan nilai nilai tersebut */
+Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
+    return 'Pos ke- ' .$postId. " <br>Komentar ke- : " .$commentId;
+});

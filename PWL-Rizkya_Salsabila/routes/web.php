@@ -83,3 +83,8 @@ $url = route('profile');
 
 //mengalihkan pengguna ke named route 'profile'
 return redirect()->route('profile');
+
+//akan menampilkan view welcome
+Route::view('/welcome', 'welcome');
+//akan menampilkan view welcome dengan tambahan data variabel name
+Route::view('/welcome', 'welcome', ['name' => 'Taylor']);

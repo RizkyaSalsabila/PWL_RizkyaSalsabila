@@ -58,3 +58,10 @@ untuk ditampilkan di halaman web browser */
 Route::get('/articles/{id}', function ($id) {
     return 'Halaman Artikel dengan ID ' .$id;
 });
+
+/* menggunakan rute 'GET' dengan url memakai parameter dinamis {name?} yang 
+bersifat opsional, jika diisi maka akan diterima oleh parameter 
+'$name'.Jika tidak, maka nilainya null */
+Route::get('/user/{name?}', function ($name=null) {
+    return 'Nama saya ' .$name;
+});

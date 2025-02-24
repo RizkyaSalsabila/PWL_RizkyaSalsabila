@@ -65,3 +65,10 @@ bersifat opsional, jika diisi maka akan diterima oleh parameter
 Route::get('/user/{name?}', function ($name=null) {
     return 'Nama saya ' .$name;
 });
+
+/* menggunakan rute 'GET' dengan url memakai parameter dinamis {name?} yang 
+bersifat opsional, jika diisi maka akan diterima oleh parameter 
+'$name'.Jika tidak, maka nama yang muncul 'John' */
+Route::get('/user/{name?}', function ($name='John') {
+    return 'Nama saya ' .$name;
+});

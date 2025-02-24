@@ -72,3 +72,14 @@ bersifat opsional, jika diisi maka akan diterima oleh parameter
 Route::get('/user/{name?}', function ($name='John') {
     return 'Nama saya ' .$name;
 });
+/* menggunakan rute 'GET' dengan url '/user/profile', dimana fungsi ini tidak
+mengembalikan output apapun dan diberikan nama 'profile' pada route ini */
+Route::get('/user/profile', function () {
+    //
+})->name('profile');
+
+//menyimpan hasil route('profile') ke dalam variabel $url
+$url = route('profile');
+
+//mengalihkan pengguna ke named route 'profile'
+return redirect()->route('profile');

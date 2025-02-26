@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,7 @@ Route::get('/', function () {
 });
 
 //menggunakan rute 'GET' dengan url '/hello', kemudian mengembalikan teks 'Hello World'
-Route::get('/hello', function () {
-    return 'Hello World';
-});
+Route::get('/hello', [WelcomeController::class, 'hello']);
 
 //menggunakan rute 'GET' dengan url '/world', kemudian mengembalikan teks 'World'
 Route::get('/world', function () {
@@ -73,18 +72,22 @@ Route::get('/user/{name?}', function ($name='John') {
     return 'Nama saya ' .$name;
 });
 /* menggunakan rute 'GET' dengan url '/user/profile', dimana fungsi ini tidak
-mengembalikan output apapun dan diberikan nama 'profile' pada route ini */
-Route::get('/user/profile', function () {
-    //
-})->name('profile');
+// mengembalikan output apapun dan diberikan nama 'profile' pada route ini */
+// Route::get('/user/profile', function () {
+//     //
+// })->name('profile');
 
-//menyimpan hasil route('profile') ke dalam variabel $url
-$url = route('profile');
+// //menyimpan hasil route('profile') ke dalam variabel $url
+// $url = route('profile');
 
-//mengalihkan pengguna ke named route 'profile'
-return redirect()->route('profile');
+// //mengalihkan pengguna ke named route 'profile'
+// return redirect()->route('profile');
 
 //akan menampilkan view welcome
 Route::view('/welcome', 'welcome');
 //akan menampilkan view welcome dengan tambahan data variabel name
 Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
+
+/* menggunakan rute 'GET' dengan url '/hello',
+kemudian memanggil class WelcomeController dan menjalankan method 'hello' */
+Route::get('/hello', [WelcomeController::class, 'hello']);

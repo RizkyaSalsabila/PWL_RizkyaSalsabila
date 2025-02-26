@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,15 +28,17 @@ Route::get('/world', function () {
 });
 
 //menggunakan rute 'GET' dengan url '/', kemudian mengembalikan teks 'Selamat Datang'
-Route::get('/', function () {
-    return 'Selamat Datang';
-});
+//DIGANTI KE BARIS 101
+// Route::get('/', function () {
+//     return 'Selamat Datang';
+// });
 
 /*menggunakan rute 'GET' dengan url '/about', 
 kemudian mengembalikan teks NIM - Nama (2341720056 - Rizkya Salsabila) */
-Route::get('/about', function () {
-    return '2341720056 - Rizkya Salsabila';
-});
+//DIGANTI KE BARIS 105
+// Route::get('/about', function () {
+//     return '2341720056 - Rizkya Salsabila';
+// });
 
 /* menggunakan rute 'GET' dengan url yang memakai parameter dinamis {name},
 dan disimpan dalam variabel $name, kemudian mengembalikan teks 
@@ -54,9 +57,10 @@ Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
 /* menggunakan rute 'GET' dengan url memakai parameter dinamis {id},
 serta memiliki 1 parameter '$id' yang nantinya mengambil nilai dari {id} url
 untuk ditampilkan di halaman web browser */
-Route::get('/articles/{id}', function ($id) {
-    return 'Halaman Artikel dengan ID ' .$id;
-});
+//DIGANTI KE BARIS 109
+// Route::get('/articles/{id}', function ($id) {
+//     return 'Halaman Artikel dengan ID ' .$id;
+// });
 
 /* menggunakan rute 'GET' dengan url memakai parameter dinamis {name?} yang 
 bersifat opsional, jika diisi maka akan diterima oleh parameter 
@@ -91,3 +95,15 @@ Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 /* menggunakan rute 'GET' dengan url '/hello',
 kemudian memanggil class WelcomeController dan menjalankan method 'hello' */
 Route::get('/hello', [WelcomeController::class, 'hello']);
+
+/* menggunakan rute 'GET' dengan url '/',
+kemudian memanggil class PageController dan menjalankan method 'index' */
+Route::get('/', [PageController::class, 'index']);
+
+/* menggunakan rute 'GET' dengan url '/about',
+kemudian memanggil class PageController dan menjalankan method 'about' */
+Route::get('/about', [PageController::class, 'about']);
+
+/* menggunakan rute 'GET' dengan url 'articles' memakai parameter dinamis {id},
+kemudian memanggil class PageController dan menjalankan method 'articles' */
+Route::get('/articles/{id}', [PageController::class, 'articles']);

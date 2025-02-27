@@ -137,7 +137,5 @@ Route::resource('photos', PhotoController::class);
 // Route::resource('photos', PhotoController::class)->except([     'create', 'store', 'update', 'destroy' ]);
 
 /* menggunakan rute 'GET' dengan url '/greeting',
-kemudian mengembalikan view pada 'blog.hello' dengan data name = 'Rizkya'.*/
-Route::get('/greeting', function () {
-    return view('blog.hello', ['name' => 'Rizkya']);
-});
+kemudian memanggil class WelcomeController dan menjalankan method 'greeting' */
+Route::get('/greeting', [WelcomeController::class, 'greeting']);

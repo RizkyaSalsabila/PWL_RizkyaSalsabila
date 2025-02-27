@@ -11,7 +11,13 @@ class WelcomeController extends Controller
         return 'Hello World';   // mengembalikan 'Hello World'
     }
 
-    public function greeting () { 
-        return view('blog.hello', ['name' => 'Rizkya']);
+    // public function greeting () { 
+    //     return view('blog.hello', ['name' => 'Rizkya']);
+    // }
+
+    public function greeting () {   // method 'greeting' dengan modifier public
+        return view('blog.hello')   // mengembalikan view pada 'blog.hello'
+        ->with('name', 'Rizkya')    // mengembalikan nama 'Rizkya'
+        ->with('occupation', 'Astronaut');  //mengembalikan pekerjaan 'Astronaut'
     }
 }

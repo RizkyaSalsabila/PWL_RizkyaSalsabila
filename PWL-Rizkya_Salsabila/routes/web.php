@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -96,14 +99,29 @@ Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 kemudian memanggil class WelcomeController dan menjalankan method 'hello' */
 Route::get('/hello', [WelcomeController::class, 'hello']);
 
+// /* menggunakan rute 'GET' dengan url '/',
+// kemudian memanggil class PageController dan menjalankan method 'index' */
+// DIGANTI KE BARIS 119
+// Route::get('/', [PageController::class, 'index']);
+
+// /* menggunakan rute 'GET' dengan url '/about',
+// kemudian memanggil class PageController dan menjalankan method 'about' */
+// DIGANTI KE BARIS 123
+// Route::get('/about', [PageController::class, 'about']);
+
+// /* menggunakan rute 'GET' dengan url 'articles' memakai parameter dinamis {id},
+// kemudian memanggil class PageController dan menjalankan method 'articles' */
+// DIGANTI KE BARIS 127
+// Route::get('/articles/{id}', [PageController::class, 'articles']);
+
 /* menggunakan rute 'GET' dengan url '/',
-kemudian memanggil class PageController dan menjalankan method 'index' */
-Route::get('/', [PageController::class, 'index']);
+kemudian memanggil class HomeController dan menjalankan method 'index' */
+Route::get('/', [HomeController::class, 'index']);
 
 /* menggunakan rute 'GET' dengan url '/about',
-kemudian memanggil class PageController dan menjalankan method 'about' */
-Route::get('/about', [PageController::class, 'about']);
+kemudian memanggil class AboutController dan menjalankan method 'about' */
+Route::get('/about', [AboutController::class, 'about']);
 
 /* menggunakan rute 'GET' dengan url 'articles' memakai parameter dinamis {id},
-kemudian memanggil class PageController dan menjalankan method 'articles' */
-Route::get('/articles/{id}', [PageController::class, 'articles']);
+kemudian memanggil class ArticleController dan menjalankan method 'articles' */
+Route::get('/articles/{id}', [ArticleController::class, 'articles']);

@@ -135,3 +135,9 @@ Route::resource('photos', PhotoController::class);
 // Route::resource('photos', PhotoController::class)->only([     'index', 'show' ]);
 // membuat 3 method standar keculai method 'create', 'store', 'update', 'destroy'
 // Route::resource('photos', PhotoController::class)->except([     'create', 'store', 'update', 'destroy' ]);
+
+/* menggunakan rute 'GET' dengan url '/greeting',
+kemudian mengembalikan view 'hello' dengan data name = 'Rizkya'.*/
+Route::get('/greeting', function () {
+    return view('hello', ['name' => 'Rizkya']);
+});

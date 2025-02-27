@@ -129,3 +129,9 @@ Route::get('/articles/{id}', [ArticleController::class, 'articles']);
 
 // membuat 7 method standar pada class 'PhotoController'
 Route::resource('photos', PhotoController::class);
+
+// JIKA INGIN MEMBUAT RESOURCE CONTROLLER DENGAN METHOD TERTENTU, maka jalankan kode ini
+// membuat 2 method saja yakni 'index' dan 'show'
+// Route::resource('photos', PhotoController::class)->only([     'index', 'show' ]);
+// membuat 3 method standar keculai method 'create', 'store', 'update', 'destroy'
+// Route::resource('photos', PhotoController::class)->except([     'create', 'store', 'update', 'destroy' ]);

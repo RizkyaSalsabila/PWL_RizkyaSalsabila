@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -125,3 +126,6 @@ Route::get('/about', [AboutController::class, 'about']);
 /* menggunakan rute 'GET' dengan url 'articles' memakai parameter dinamis {id},
 kemudian memanggil class ArticleController dan menjalankan method 'articles' */
 Route::get('/articles/{id}', [ArticleController::class, 'articles']);
+
+// membuat 7 method standar pada class 'PhotoController'
+Route::resource('photos', PhotoController::class);
